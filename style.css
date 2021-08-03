@@ -1,0 +1,128 @@
+*{
+    margin: 0%;
+    box-sizing: border-box;
+    transition: all .3s linear;
+}
+body{
+    color: white;
+    background-color: #4c4cc9;
+    background-image: url(bg-desktop.svg);
+}
+.common{
+    /* width: 90%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    box-shadow: 0px 0px 20px 5px #cbcece50;
+    background-color: rgba(31, 28, 53, 0.528);
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr .5fr auto;
+}
+.container nav{
+    align-items: flex-end;
+    margin: 1rem;
+}
+
+.container main,.output-sec{
+    display: grid;
+    place-content: center;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    flex-direction: row;
+}
+h1{
+    margin: 1rem;
+    text-align: center;
+}
+.inputs{
+    color: white;
+    font-weight: 900;
+    outline: none;
+    border: 2px solid white;
+    background-color: inherit;
+    border-radius: 10px;
+    padding: .6rem 2rem;
+    margin-top: 10px;
+}
+.inputs::placeholder{
+    color: black;
+}
+.btn-submit{
+    outline: none;
+    border: transparent;
+    background-color:#4c4cc9;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: .7rem 1.5rem;
+    border-radius: 20px;
+}
+.btn-submit:hover{
+    background-color: black;
+    color: #4c4cc9;
+}
+.image-sec{
+    align-self: flex-end;
+    display: flex;
+    justify-content : flex-end;
+}
+.image-sec img{ 
+    width: 70%;
+    height: 65%;
+}
+.output-sec{
+    visibility: hidden;
+    grid-template-columns: 1fr 1fr;
+}
+.output-sec .output-text{
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    font-weight: 900;
+    font-size: larger;
+}
+.gif-sec,.output-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gif-sec img{
+    border-radius: 10px;
+    width: 40%;
+    height: 70%;
+    border: 2px solid transparent;
+    box-shadow: 1px 1px 15px 5px rgba(255, 255, 255, 0.452);
+}
+.page-links{
+    font-weight: 900;
+    font-size: large;
+    text-decoration: none;
+    color: black;
+}
+.page-links:hover{
+    color: white;
+}
+footer{
+    margin-bottom: 10px;
+    word-spacing: 2px;
+}
+footer ul{
+    list-style-type: none;
+    flex-direction:row !important;
+}
+.social-li{
+    padding:0 1rem;
+    margin: 5px;
+}
+.social-li a{
+    color: white;
+}
+.social-li a:hover{
+    color: black;
+}
