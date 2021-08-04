@@ -8,6 +8,12 @@ domForms.addEventListener("submit", () => {
     let buyingPrice = domForms[0].value;
     let buyingQuantity = domForms[1].value;
     let currentPrice = domForms[2].value;
+    if (buyingPrice === 0 || buyingQuantity === 0) {
+        domBody.style.backgroundColor = "#4c4cc9";
+        outputText.textContent = "Please enter valid amounts.";
+        outputGif.src = 'please.gif';
+
+    }
     let buyValue = buyingPrice * buyingQuantity;
     let currentValue = currentPrice * buyingQuantity;
     let totalValuation = (currentValue - buyValue);
