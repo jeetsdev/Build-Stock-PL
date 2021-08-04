@@ -5,20 +5,19 @@ const outputText = document.querySelector('.output-text');
 const outputGif = document.querySelector("#output-gif");
 
 domForms.addEventListener("submit", () => {
-    let buyingPrice = domForms[0].value;
-    let buyingQuantity = domForms[1].value;
-    let currentPrice = domForms[2].value;
-    if (buyingPrice == 0 || buyingQuantity == 0) {
-        domBody.style.backgroundColor = "#4c4cc9";
-        outputText.textContent = "Please enter valid amounts.";
-        outputGif.src = 'please.gif';
-
-    }
+    let buyingPrice = Number(domForms[0].value);
+    let buyingQuantity = Number(domForms[1].value);
+    let currentPrice = Number(domForms[2].value);
     let buyValue = buyingPrice * buyingQuantity;
     let currentValue = currentPrice * buyingQuantity;
     let totalValuation = (currentValue - buyValue);
     let totoalPercentage = (totalValuation * 100 / buyValue.toFixed(2));
-    if (totalValuation >= 1 && totoalPercentage >= 50) {
+    if (buyingPrice == 0 || buyingQuantity == 0) {
+        domBody.style.backgroundColor = "#4c4cc9";
+        outputText.textContent = "Please enter valid amounts.";
+        outputGif.src = 'please.gif';
+    }
+    else if (totalValuation >= 1 && totoalPercentage >= 50) {
         domBody.style.backgroundColor = "#4c4cc9";
         outputText.textContent = (`Yay !!! you have gain a profit of ${totalValuation} rupees and the profit percentage is ${totoalPercentage}%.`);
         outputGif.src = 'profit.gif';
