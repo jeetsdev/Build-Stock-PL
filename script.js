@@ -11,13 +11,12 @@ domForms.addEventListener("submit", () => {
     let buyValue = buyingPrice * buyingQuantity;
     let currentValue = currentPrice * buyingQuantity;
     let totalValuation = (currentValue - buyValue);
-    let totoalPercentage = (totalValuation * 100 / buyValue.toFixed(2));
+    let totoalPercentage = (totalValuation * 100 / buyValue).toFixed(2);
     if (buyingPrice == 0 || buyingQuantity == 0) {
         domBody.style.backgroundColor = "#4c4cc9";
         outputText.textContent = "Please enter valid amounts.";
         outputGif.src = 'please.gif';
-    }
-    else if (totalValuation >= 1 && totoalPercentage >= 50) {
+    } else if (totalValuation >= 1 && totoalPercentage >= 50) {
         domBody.style.backgroundColor = "#4c4cc9";
         outputText.textContent = (`Yay !!! you have gain a profit of ${totalValuation} rupees and the profit percentage is ${totoalPercentage}%.`);
         outputGif.src = 'profit.gif';
@@ -34,11 +33,10 @@ domForms.addEventListener("submit", () => {
         domBody.style.backgroundColor = "#4c4cc9";
         outputGif.src = 'sad.gif';
         outputText.textContent = (`Oops !!! you have made a loss of ${Math.abs(totalValuation)} ruppes and the loss percentage is ${Math.abs(totoalPercentage)}%.`);
-    } else if (totalValuation < 1 && (totoalPercentage < -50)) {
+    } else if (totalValuation < 1 && (totoalPercentage <= -50)) {
         domBody.style.backgroundColor = "black";
         outputGif.src = 'loss.gif';
         outputText.textContent = (`Oops !!! you have made a loss of ${Math.abs(totalValuation)} ruppes and the loss percentage is ${Math.abs(totoalPercentage)}%.`);
     }
     outputSec.style.visibility = 'visible';
 })
-
