@@ -12,7 +12,7 @@ domForms.addEventListener("submit", () => {
     let currentValue = currentPrice * buyingQuantity;
     let totalValuation = (currentValue - buyValue);
     let totoalPercentage = (totalValuation * 100 / buyValue).toFixed(2);
-    if (buyingPrice == 0 || buyingQuantity == 0) {
+    if (buyingPrice <= 0 || buyingQuantity <= 0 || currentPrice <= 0) {
         domBody.style.backgroundColor = "#4c4cc9";
         outputText.textContent = "Please enter valid amounts.";
         outputGif.src = 'please.gif';
