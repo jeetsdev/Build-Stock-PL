@@ -6,7 +6,7 @@
 body{
     color: white;
     background-color: #4c4cc9;
-    background-image: url(bg-desktop.svg);
+    background-image: url(images/bg-desktop.svg);
 }
 .common{
     display: flex;

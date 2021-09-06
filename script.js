@@ -15,27 +15,27 @@ domForms.addEventListener("submit", () => {
     if (buyingPrice <= 0 || buyingQuantity <= 0 || currentPrice <= 0) {
         domBody.style.backgroundColor = "#4c4cc9";
         outputText.textContent = "Please enter valid amounts.";
-        outputGif.src = 'please.gif';
+        outputGif.src = 'images/please.gif';
     } else if (totalValuation >= 1 && totoalPercentage >= 50) {
         domBody.style.backgroundColor = "#4c4cc9";
         outputText.textContent = (`Yay !!! you have gain a profit of ${totalValuation} rupees and the profit percentage is ${totoalPercentage}%.`);
-        outputGif.src = 'profit.gif';
+        outputGif.src = 'images/profit.gif';
     } else if (totalValuation >= 1 && (totoalPercentage < 50 && totoalPercentage > 1)) {
         domBody.style.backgroundColor = "#4c4cc9";
         outputText.textContent = (`Yay !!! you have gain a profit of ${totalValuation} rupees and the profit percentage is ${totoalPercentage}%.`);
-        outputGif.src = 'happy.gif';
+        outputGif.src = 'images/happy.gif';
 
-    } else if (totalValuation === 0 && totoalPercentage === 0) {
+    } else if (totalValuation == 0 && totoalPercentage == 0) {
         domBody.style.backgroundColor = "#4c4cc9";
         outputText.textContent = (`Niether profit nor loss, Stock is at the same price.`);
-        outputGif.src = "better.jpeg";
+        outputGif.src = "images/better.jpeg";
     } else if (totalValuation < 1 && totoalPercentage > -50) {
         domBody.style.backgroundColor = "#4c4cc9";
-        outputGif.src = 'sad.gif';
+        outputGif.src = 'images/sad.gif';
         outputText.textContent = (`Oops !!! you have made a loss of ${Math.abs(totalValuation)} ruppes and the loss percentage is ${Math.abs(totoalPercentage)}%.`);
     } else if (totalValuation < 1 && (totoalPercentage <= -50)) {
         domBody.style.backgroundColor = "black";
-        outputGif.src = 'loss.gif';
+        outputGif.src = 'images/loss.gif';
         outputText.textContent = (`Oops !!! you have made a loss of ${Math.abs(totalValuation)} ruppes and the loss percentage is ${Math.abs(totoalPercentage)}%.`);
     }
     outputSec.style.visibility = 'visible';
